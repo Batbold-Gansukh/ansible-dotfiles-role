@@ -1,0 +1,7 @@
+# vim:ft=ansible:
+
+- name: Clone dotfiles repository
+  git: repo=git@github.com:Batbold-Gansukh/dotfiles.git 
+       dest={{local_home}}/.dotfiles
+- name: Run dotfiles configure file
+  shell: ./{{local_home}}/.dotfiles/configure
