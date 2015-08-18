@@ -1,7 +1,9 @@
 # vim:ft=ansible:
 
 - name: Clone dotfiles repository
-  git: repo=git@github.com:Batbold-Gansukh/dotfiles.git 
-       dest={{local_home}}/.dotfiles
+  git: repo=https://github.com/Batbold-Gansukh/dotfiles.git
+       dest={{ansible_env.HOME}}/.dotfiles
+       accept_hostkey=yes
+       clone=yes
 - name: Run dotfiles configure file
-  shell: ./{{local_home}}/.dotfiles/configure
+  shell: "sudo {{ansible_env.HOME}}/.dotfiles/configure"
