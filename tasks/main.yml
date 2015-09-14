@@ -6,4 +6,4 @@
        accept_hostkey=yes
        clone=yes
 - name: Run dotfiles configure file
-  shell: "sudo {{ansible_env.HOME}}/.dotfiles/configure"
+  shell: "{{ansible_env.HOME}}/.dotfiles/configure"
